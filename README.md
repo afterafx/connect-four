@@ -4,7 +4,7 @@ Made with HTML, CSS, and JS
 
 
 ## TODO
-- [ ] Markup 
+- [x] Markup 
 - [ ] Styles
 - [ ] Generate Board Automatically
 - [ ] Turn Logic
