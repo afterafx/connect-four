@@ -5,7 +5,7 @@ Made with HTML, CSS, and JS
 
 ## TODO
 - [x] Markup 
-- [ ] Styles
+- [x] Styles
 - [ ] Generate Board Automatically
 - [ ] Turn Logic
 - [ ] Win Logic
