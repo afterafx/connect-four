@@ -26,7 +26,7 @@ for (let row = boardRows - 1; row >= 0; row--) {
 board.innerHTML = boardHTML;
 
 let player1Turn = true;
-let playerSwitch = true;
+
 function runTurn(input){
     // Change color of the label
     input.parentElement.className = player1Turn ? 'player1' : 'player2';
