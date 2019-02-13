@@ -12,6 +12,6 @@ Made with HTML, CSS, and JS
     - [x] Change who's turn it is
     - [x] Change who's turned is displayed
     - [x] Disable invalid slots
-- [ ] Win Logic 
+- [x] Win Logic 
 - [ ] Scoreboard
 - [ ] Reset Button
