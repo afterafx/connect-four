@@ -3,8 +3,8 @@ const BOARDROWS = 6;
 
 const board = document.getElementById('board');
 const playerIndicator = document.getElementById('player-indicator');
-let scorePlayer1 = 0;
-let scorePlayer2 = 0;
+// let scorePlayer1 = 0;
+// let scorePlayer2 = 0;
 
 // setup board
 let boardHTML = '';
