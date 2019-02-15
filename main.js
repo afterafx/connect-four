@@ -3,6 +3,8 @@ const BOARDROWS = 6;
 
 const board = document.getElementById('board');
 const playerIndicator = document.getElementById('player-indicator');
+let scorePlayer1 = 0;
+let scorePlayer2 = 0;
 
 // setup board
 let boardHTML = '';
@@ -50,7 +52,7 @@ function runTurn(input) {
     // get all checkboxs
     const checkboxes = document.querySelectorAll('.slot input[type=checkbox]');
     // and disable all of them
-    checkboxes.forEach(checkbox => {
+    checkboxes.forEach((checkbox) => {
       checkbox.disabled = true;
     });
 
@@ -72,7 +74,8 @@ function runTurn(input) {
 }
 
 function checkWin(col, row, currPlayer) {
-  return checkDown(col, row, currPlayer) || checkAcross(col, row, currPlayer) || checkDiagonal(col, row, currPlayer);
+  return checkDown(col, row, currPlayer) || checkAcross(col, row, currPlayer) ||
+   checkDiagonal(col, row, currPlayer);
   // check diagonals
 }
 
