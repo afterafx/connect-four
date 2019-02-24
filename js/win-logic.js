@@ -1,8 +1,11 @@
-import { BOARDCOLS, BOARDROWS } from './constants.js';
+import {
+  BOARDCOLS,
+  BOARDROWS
+} from './constants.js';
 
-export function checkWin(col, row, currPlayer) {
-  return checkDown(col, row, currPlayer) || checkAcross(col, row, currPlayer)
-  || checkDiagonal(col, row, currPlayer);
+export default function checkWin(col, row, currPlayer) {
+  return checkDown(col, row, currPlayer) || checkAcross(col, row, currPlayer) ||
+    checkDiagonal(col, row, currPlayer);
   // check diagonals
 }
 
