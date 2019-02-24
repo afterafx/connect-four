@@ -18,7 +18,7 @@ const formHTML = `
 </div>
 `;
 
-form.innerHTML = formHTML;
+// form.innerHTML = formHTML;
 
 // ======================================================
 
@@ -52,8 +52,8 @@ function submitForm(event) {
 // ======================================================
 
 // Event Listeners
-document.getElementById("open-button").addEventListener("click", openForm);
+// document.getElementById("open-button").addEventListener("click", openForm);
 
-document.getElementById("btn-cancel").addEventListener("click", closeForm);
+// document.getElementById("btn-cancel").addEventListener("click", closeForm);
 
 // ======================================================

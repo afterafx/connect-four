@@ -9,17 +9,6 @@ const board = document.getElementById("board");
 
 // ======================================================
 
-// Event listeners
-document.getElementById("reset-button").addEventListener("click", resetBoard);
-
-// document.getElementById("open-button").addEventListener("click", openForm);
-
-// document.getElementById("btn-cancel").addEventListener("click", closeForm);
-
-// document.getElementById('submit').addEventListener('submit', submitForm);
-
-// ======================================================
-
 function initalize() {
 
   // document.getElementById(
@@ -40,5 +29,16 @@ function initalize() {
 
 // Initalize the board
 initalize();
+
+// ======================================================
+
+// Event listeners
+// document.getElementById("reset-button").addEventListener("click", resetBoard);
+
+// document.getElementById("open-button").addEventListener("click", openForm);
+
+// document.getElementById("btn-cancel").addEventListener("click", closeForm);
+
+// document.getElementById('submit').addEventListener('submit', submitForm);
 
 // ======================================================
