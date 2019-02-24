@@ -1,80 +1,44 @@
-import { BOARDCOLS, BOARDROWS } from "./constants.js";
-import { checkWin } from './win-logic.js';
+import setupBoard from './setupBoard.js';
+import runTurn from './runTurn.js';
+import resetBoard from './resetBoard.js'
+import './form.js';
 
+// ======================================================
 
-const board = document.getElementById('board');
-const playerIndicator = document.getElementById('player-indicator');
-// let scorePlayer1 = 0;
-// let scorePlayer2 = 0;
+const board = document.getElementById("board");
 
-// setup board
-let boardHTML = '';
-for (let row = BOARDROWS - 1; row >= 0; row -= 1) {
-  // iterate over rows, going down
-  for (let col = 0; col < BOARDCOLS; col += 1) {
-    // iterate over columns, going up
-    // prettier-ignore
-    boardHTML += `
-      <div class="slot">
-        <label for="slot${col}${row}">
-          <input type="checkbox" ${row > 0 ? 'disabled' : ''} name="slot${col}${row}" id="slot${col}${row}" data-row="${row}" data-col="${col}" >
-        </label>
-      </div>
-    `;
-  }
-}
-// set the board's HTML
-board.innerHTML = boardHTML;
+// ======================================================
 
-document.querySelectorAll('input').forEach(input => input.addEventListener('change', runTurn));
+// Event listeners
+document.getElementById("reset-button").addEventListener("click", resetBoard);
 
-let player1Turn = true;
-// eslint-disable-next-line no-unused-vars
-function runTurn(event) {
-  // change color of label
-  const input = event.target;
-  input.parentElement.className = player1Turn ? 'player1' : 'player2';
+// document.getElementById("open-button").addEventListener("click", openForm);
 
-  // disable the input
-  input.disabled = true;
-  // enable the slot at (row + 1, col)
-  const { col, row } = input.dataset;
-  // check if input is on the top row
-  if (row < BOARDROWS - 1) {
-    const neighbor = document.getElementById(`slot${col}${parseInt(row) + 1}`);
-    neighbor.disabled = false;
-  }
+// document.getElementById("btn-cancel").addEventListener("click", closeForm);
 
-  // check if it's a win
-  const isWin = checkWin(parseInt(col), parseInt(row), player1Turn ? 'player1' : 'player2');
-  if (isWin) {
-    // update win text
-    const turnIndicator = document.getElementById('turn-indicator');
-    const player = player1Turn ? 'player1' : 'player2';
-    turnIndicator.innerHTML = `🎉 <span class="${player}" id="player-indicator">Player 1</span> wins 🎉`;
+// document.getElementById('submit').addEventListener('submit', submitForm);
 
-    // get all checkboxs
-    const checkboxes = document.querySelectorAll('.slot input[type=checkbox]');
-    // and disable all of them
-    checkboxes.forEach((checkbox) => {
-      checkbox.disabled = true;
-    });
+// ======================================================
 
-    return;
-  }
-  // update win text (win celebrations)
+function initalize() {
 
-  // change whose turn it is
-  player1Turn = !player1Turn;
+  // document.getElementById(
+  //   "turn-indicator"
+  // ).innerHTML = `<span class="player1" id="player-indicator">Player 1</span> turn`;
 
-  // update player-indicator text
-  if (player1Turn) {
-    playerIndicator.innerText = 'Player 1';
-    playerIndicator.className = 'player1';
-  } else {
-    playerIndicator.innerText = 'Player 2';
-    playerIndicator.className = 'player2';
-  }
+  // set the board's HTML
+  board.innerHTML = setupBoard();
+
+  // adds listeners to each slot
+  document
+    .querySelectorAll("input")
+    .forEach(input => input.addEventListener("change", runTurn));
+
 }
 
-window.runTurn = runTurn;
+// ======================================================
+
+// Initalize the board
+initalize();
+
+// ======================================================
